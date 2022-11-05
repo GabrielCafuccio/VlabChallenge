@@ -1,0 +1,52 @@
+<form class="example-form">
+  <!-- NOME DE USUARIO -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nome de usuário</mat-label>
+    <input matInput #message maxlength="256" placeholder="" #boxUser>
+  </mat-form-field>
+
+  <!-- email -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>E-mail</mat-label>
+    <input matInput #message maxlength="256" placeholder="" #boxEmail>
+  </mat-form-field>
+
+  <!-- confieme email -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Confieme e-mail</mat-label>
+    <input matInput #message maxlength="256" placeholder="" #boxConfEmail>
+  </mat-form-field>
+
+  <!-- instituicao -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Instituição</mat-label>
+    <input matInput #message maxlength="256" placeholder="" #boxInstituicao>
+  </mat-form-field>
+
+  <!-- cargo -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Cargo</mat-label>
+    <input matInput #message maxlength="256" placeholder="" #boxCargo>
+  </mat-form-field>
+
+  <!-- senha -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Senha</mat-label>
+    <input matInput type="password" maxlength="256" placeholder="" #boxSenha>
+  </mat-form-field>
+
+  <!-- confirme senha -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Confirme senha</mat-label>
+    <input matInput type="password" maxlength="256" placeholder="" #boxConfSenha >
+  </mat-form-field>
+
+</form>
+
+<section class="example-section">
+  <mat-checkbox class="example-margin">Aceito o Termos de Uso e Política de Privacidade</mat-checkbox>
+</section>
+
+<button mat-stroked-button color="primary" class="button" [routerLink]="['']">Cancel</button>
+<button mat-raised-button color="primary" class="button" style="margin: 10px;"
+  (click)="saveForm(boxUser.value, boxEmail.value, boxConfEmail.value, boxInstituicao.value, boxCargo.value, boxSenha.value, boxConfSenha.value)">Continuar</button>

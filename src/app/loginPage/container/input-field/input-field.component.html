@@ -1,0 +1,31 @@
+<mat-form-field appearance="fill">
+    <mat-label>Nome de Usuário</mat-label>
+
+    <input matInput type="text" #boxName>
+
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Senha</mat-label>
+
+    <input matInput [type]="hide ? 'password' : 'text'" type="text" #boxPassword>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+</mat-form-field>
+
+
+
+<button mat-button color="primary">Forgot password?</button>
+
+<div class="teste_botoes">
+    <button class="continue-cadastre-buttons" mat-raised-button [routerLink]="['signup']">Sign up</button>
+    <button class="continue-cadastre-buttons" mat-raised-button color="primary"
+        (click)="saveInput(boxName.value, boxPassword.value); getFromStorage()">Login</button>
+</div>
+<div style="margin-left: 10px;">
+    <p>Name from Session Storage is: {{displayValName}}</p>
+    <p>Password from Session Storage is: {{displayValPassword}}</p>
+</div>
